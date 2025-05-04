@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.iae.controller.ProjectDialogController"
+      spacing="10"
+      prefWidth="600.0"
+      prefHeight="550.0">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <Label text="Project" style="-fx-font-size: 18; -fx-font-weight: bold"/>
+    
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" minWidth="150"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+            <ColumnConstraints hgrow="NEVER" minWidth="80"/>
+        </columnConstraints>
+        
+        <Label text="Project Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="projectNameField" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+        
+        <Label text="Configuration:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="configurationComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="2" maxWidth="Infinity"/>
+        
+        <Label text="Main File Name:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="mainFileNameField" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+        
+        <Label text="Command Line Arguments:" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets top="5"/>
+            </GridPane.margin>
+        </Label>
+        <TextArea fx:id="commandLineArgsField" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="2" prefHeight="80"/>
+        
+        <Label text="Expected Output:" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets top="5"/>
+            </GridPane.margin>
+        </Label>
+        <TextArea fx:id="expectedOutputField" GridPane.rowIndex="4" GridPane.columnIndex="1" prefHeight="120"/>
+        <Button fx:id="browseExpectedOutputButton" text="Browse" GridPane.rowIndex="4" GridPane.columnIndex="2" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets top="5"/>
+            </GridPane.margin>
+        </Button>
+        
+        <Label text="Submissions Directory:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="submissionsDirField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        <Button fx:id="browseSubmissionsDirButton" text="Browse" GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+    </GridPane>
+    
+    <Label text="Note: Each command line argument should be on a separate line. The expected output is what will be compared with student program outputs." wrapText="true"/>
+    
+    <Label fx:id="validationLabel" wrapText="true"/>
+    
+    <Region VBox.vgrow="ALWAYS"/>
+    
+    <HBox spacing="10" alignment="BOTTOM_RIGHT">
+        <Button fx:id="cancelButton" text="Cancel" prefWidth="100"/>
+        <Button fx:id="saveButton" text="Save" prefWidth="100"/>
+    </HBox>
+</VBox> 

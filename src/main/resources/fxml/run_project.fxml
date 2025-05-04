@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.iae.controller.RunProjectController"
+            prefHeight="600.0" prefWidth="800.0">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Run Project" style="-fx-font-size: 18; -fx-font-weight: bold"/>
+            <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" minWidth="150"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="NEVER" minWidth="80"/>
+                </columnConstraints>
+                
+                <Label text="Project Name:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold"/>
+                <Label fx:id="projectNameLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                
+                <Label text="Configuration:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold"/>
+                <Label fx:id="configurationLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                
+                <Label text="Submissions Directory:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="submissionsDirField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Button fx:id="browseButton" text="Browse" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <Button fx:id="runButton" text="Run" disable="true"/>
+            </HBox>
+            <Separator/>
+        </VBox>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.6" orientation="VERTICAL">
+            <VBox spacing="5">
+                <padding>
+                    <Insets top="5" right="5" bottom="5" left="5"/>
+                </padding>
+                <Label text="Results" style="-fx-font-weight: bold"/>
+                <TableView fx:id="resultsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="studentIdColumn" text="Student ID" prefWidth="100"/>
+                        <TableColumn fx:id="compilationSuccessColumn" text="Compilation" prefWidth="100"/>
+                        <TableColumn fx:id="executionSuccessColumn" text="Execution" prefWidth="100"/>
+                        <TableColumn fx:id="outputMatchesColumn" text="Output Matches" prefWidth="120"/>
+                        <TableColumn fx:id="passedColumn" text="Passed" prefWidth="80"/>
+                    </columns>
+                </TableView>
+            </VBox>
+            <VBox spacing="5">
+                <padding>
+                    <Insets top="5" right="5" bottom="5" left="5"/>
+                </padding>
+                <Label text="Details" style="-fx-font-weight: bold"/>
+                <TextArea fx:id="detailsArea" VBox.vgrow="ALWAYS" editable="false"/>
+            </VBox>
+        </SplitPane>
+    </center>
+    <bottom>
+        <VBox spacing="5">
+            <padding>
+                <Insets top="5" right="10" bottom="10" left="10"/>
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <ProgressBar fx:id="progressBar" prefWidth="200" visible="false"/>
+                <Label fx:id="statusLabel" text=""/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="closeButton" text="Close"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane> 

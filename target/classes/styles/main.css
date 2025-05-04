@@ -1,0 +1,45 @@
+.main-container {
+    -fx-padding: 20;
+    -fx-background-color: white;
+}
+
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+    -fx-background-radius: 4;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.button:disabled {
+    -fx-background-color: #cccccc;
+    -fx-text-fill: #666666;
+}
+
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #dddddd;
+    -fx-border-radius: 4;
+}
+
+.list-cell {
+    -fx-padding: 8;
+    -fx-border-color: transparent transparent #dddddd transparent;
+}
+
+.list-cell:selected {
+    -fx-background-color: #e8f5e9;
+}
+
+.separator {
+    -fx-padding: 10 0;
+} 
