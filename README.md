@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Integrated Assignment Environment (IAE)
 
 A lightweight tool for managing programming assignments. This application allows lecturers to:
@@ -65,3 +66,6 @@ java -jar target/integrated-assignment-environment-1.0-SNAPSHOT.jar
 3. Verify or change the submissions directory
 4. Click "Run" to process all submissions
 5. View results in the table and details panel 
+=======
+# CE316_Project
+>>>>>>> 6dbe04aea7de478b78bf64a20e613ef35ed52452
