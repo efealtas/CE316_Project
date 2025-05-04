@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.iae.controller.MainController"
+            prefHeight="600.0" prefWidth="800.0">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Integrated Assignment Environment" styleClass="title"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Projects" style="-fx-font-size: 16; -fx-font-weight: bold"/>
+            </HBox>
+            <ListView fx:id="projectListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </center>
+    <right>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button fx:id="newProjectButton" text="New Project" maxWidth="Infinity"/>
+            <Button fx:id="editProjectButton" text="Edit Project" maxWidth="Infinity" disable="true"/>
+            <Button fx:id="deleteProjectButton" text="Delete Project" maxWidth="Infinity" disable="true"/>
+            <Separator/>
+            <Button fx:id="manageConfigsButton" text="Manage Configurations" maxWidth="Infinity"/>
+            <Separator/>
+            <Button fx:id="runProjectButton" text="Run Project" maxWidth="Infinity" disable="true"/>
+        </VBox>
+    </right>
+</BorderPane> 
